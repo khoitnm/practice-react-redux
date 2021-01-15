@@ -99,21 +99,11 @@ const NoRouterPage = (props: NoRouterPageProps) => {
     return (
         <div>
             {console.log(`[${componentCount}] Return Render: ${returnCount}`)}
-            <div>
-                <table style={{ border: '1px solid black' }} cellSpacing={`1px`}>
-                    <tbody>
-                        <tr>
-                            <th style={{ border: '1px solid' }}>StringValueProp: </th>
-                            <th style={{ border: '1px solid' }}>{stringValueProp}</th>
-                        </tr>
-                        <tr>
-                            <th style={{ border: '1px solid' }}>StringValueState: </th>
-                            <th style={{ border: '1px solid' }}>{stringValueState}</th>
-                        </tr>
-                    </tbody>
-                </table>
-                <button onClick={onClickNewValue}>New Value</button>
-            </div>
+            <label style={{ color: `blue` }}>Props:</label> {stringValueProp}
+            <br />
+            <label style={{ color: `blue` }}>State:</label> {stringValueState}
+            <br />
+            <button onClick={onClickNewValue}>New Value</button>
         </div>
     );
 };
