@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import filesBrowserSlice from '../../file/browser/state/filesBrowserSlice';
+import noRouterSlice from '../../noRouter/state/noRouterSlice';
 
 const rootReducer = combineReducers({
-    filesBrowser: filesBrowserSlice
+    noRouterStateSlice: noRouterSlice
 });
 /**
  * The reason why do we need this RootState type:

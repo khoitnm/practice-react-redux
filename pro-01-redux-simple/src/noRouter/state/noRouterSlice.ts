@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 /**
  * The state of browsing files (including IDocument and IFolder)
  */
-type FilesBrowserState = {
+type NoRouterState = {
     /**
      * This is the list of loaded files which end users can see them on the Browser.
      *
@@ -16,13 +16,13 @@ type FilesBrowserState = {
     stringValue: string;
 };
 
-const initialState: FilesBrowserState = {
+const initialState: NoRouterState = {
     // loadedFiles: []
     stringValue: 'Init String Value'
     // parentFolder: createRootFolder()
 };
 
-const filesBrowserSlice = createSlice({
+const noRouterSlice = createSlice({
     name: 'files',
     initialState,
     /**
@@ -43,13 +43,13 @@ const filesBrowserSlice = createSlice({
         //     state.parentFolder = action.payload;
         // },
 
-        setFilesBrowserState(state, action: PayloadAction<FilesBrowserState>) {
+        setFilesBrowserState(state, action: PayloadAction<NoRouterState>) {
             console.log(`FilesBrowserSlice.setFilesBrowserState()`);
             return { stringValue: action.payload.stringValue + ' - Updated at ' + new Date().toDateString() };
         }
     }
 });
 
-export const { setFilesBrowserState } = filesBrowserSlice.actions;
+export const { setFilesBrowserState } = noRouterSlice.actions;
 
-export default filesBrowserSlice.reducer;
+export default noRouterSlice.reducer;

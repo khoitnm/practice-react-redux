@@ -3,15 +3,15 @@
  * This is basically the thunk service.
  */
 
-import { AppThunk } from '../../../config/redux/store';
-import { setFilesBrowserState } from './filesBrowserSlice';
+import { AppThunk } from '../../config/redux/store';
+import { setFilesBrowserState } from './noRouterSlice';
 
 export const saveStringValue = (stringValue: string): AppThunk => async dispatch => {
     try {
-        console.log(`AppThunk: openFolder ${stringValue} start dispatch`);
+        console.log(`AppThunk: saveStringValue ${stringValue} start dispatch`);
         dispatch(setFilesBrowserState({ stringValue: stringValue }));
-        console.log(`AppThunk: openFolder ${stringValue} end dispatch`);
+        console.log(`AppThunk: saveStringValue ${stringValue} end dispatch`);
     } catch (err) {
-        console.error(`AppThunk: openRootFolder error dispatch` + err, err);
+        console.error(`AppThunk: saveStringValue error dispatch` + err, err);
     }
 };

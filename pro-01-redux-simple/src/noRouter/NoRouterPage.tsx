@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { saveStringValue } from './state/filesBrowserService';
-import { RootState } from '../../config/redux/rootReducer';
-import { RouteComponentProps } from 'react-router-dom';
+import { RootState } from '../config/redux/rootReducer';
+import { saveStringValue } from './state/noRouterService';
 
 /**
  * The same as filesBrowserSlice.FilesBrowserState type
  */
-type FilesBrowserPageProps = {
-    folderId: string;
+type NoRouterPageProps = {
+    stringValue: string;
 };
 /**
  * Why our component is executed many times:
@@ -20,14 +19,14 @@ type FilesBrowserPageProps = {
  * @param match
  * @constructor
  */
-const FilesBrowserPage = ({ match }: RouteComponentProps<FilesBrowserPageProps>) => {
-    const parentFolderId = match.params.folderId;
+const NoRouterPage = (props: NoRouterPageProps) => {
+    const stringValueProp = props.stringValue;
     // Retrieve data from state
-    const { stringValue } = useSelector(({ filesBrowser }: RootState) => {
+    const stringValueState = useSelector(({ noRouterStateSlice }: RootState) => {
         console.log('useSelector');
-        return filesBrowser;
+        return noRouterStateSlice.stringValue;
     });
-    console.log(`parentFolderId (from router): ${parentFolderId}. stringValue from state ${stringValue}`);
+    console.log(`parentFolderId (from router): ${stringValueProp}. stringValue from state ${stringValueState}`);
 
     /**
      * Ref: https://redux-toolkit.js.org/tutorials/advanced-tutorial
@@ -77,16 +76,18 @@ const FilesBrowserPage = ({ match }: RouteComponentProps<FilesBrowserPageProps>)
      * }
      */
     useEffect(() => {
-        console.log(`useEffect openFolder(${parentFolderId})`);
-        dispatch(saveStringValue(parentFolderId));
-    }, [parentFolderId]);
+        console.log(`useEffect saveStringValue(${stringValueProp})`);
+        dispatch(saveStringValue(stringValueProp));
+    }, [stringValueProp]);
 
     return (
         <div>
             {console.log('Render FilesBrowserPage')}
-            <div>Parent Folder: {parentFolderId}</div>
+            <div>
+                StringValueProp: {stringValueProp} - StringValueState: {stringValueState}
+            </div>
         </div>
     );
 };
 
-export default FilesBrowserPage;
+export default NoRouterPage;
