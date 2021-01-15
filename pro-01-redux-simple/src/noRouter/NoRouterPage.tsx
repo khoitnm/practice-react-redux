@@ -10,6 +10,11 @@ import { saveStringValue } from './state/noRouterService';
 type NoRouterPageProps = {
     stringValue: string;
 };
+
+let componentCount = 0;
+let selectorCount = 0;
+let returnCount = 0;
+let effectCount = 0;
 /**
  * Why our component is executed many times:
  * https://stackoverflow.com/questions/58697073/multiple-times-render-in-react-functional-component-with-hooks
@@ -20,13 +25,17 @@ type NoRouterPageProps = {
  * @constructor
  */
 const NoRouterPage = (props: NoRouterPageProps) => {
+    componentCount++;
+    console.log(`[${componentCount}] Start Component`);
+
     const stringValueProp = props.stringValue;
     // Retrieve data from state
-    const stringValueState = useSelector(({ noRouterStateSlice }: RootState) => {
-        console.log('useSelector');
-        return noRouterStateSlice.stringValue;
+    const stringValueState = useSelector((rootState: RootState) => {
+        selectorCount++;
+        console.log(`[${componentCount}] selector: ${selectorCount}`);
+        return rootState.noRouterStateSlice.stringValue;
     });
-    console.log(`parentFolderId (from router): ${stringValueProp}. stringValue from state ${stringValueState}`);
+    console.log(`[${componentCount}] After Selector: stringValueProp: ${stringValueProp}. stringValueState: ${stringValueState}`);
 
     /**
      * Ref: https://redux-toolkit.js.org/tutorials/advanced-tutorial
@@ -76,15 +85,34 @@ const NoRouterPage = (props: NoRouterPageProps) => {
      * }
      */
     useEffect(() => {
-        console.log(`useEffect saveStringValue(${stringValueProp})`);
+        effectCount++;
+        console.log(`[${componentCount}] effectCount: ${effectCount}. saveStringValue(${stringValueProp})`);
         dispatch(saveStringValue(stringValueProp));
     }, [stringValueProp]);
 
+    const onClickNewValue = () => {
+        console.log(`[${componentCount}] onClickNewValue`);
+        dispatch(saveStringValue('Random ' + new Date().getTime()));
+    };
+
+    returnCount++;
     return (
         <div>
-            {console.log('Render FilesBrowserPage')}
+            {console.log(`[${componentCount}] Return Render: ${returnCount}`)}
             <div>
-                StringValueProp: {stringValueProp} - StringValueState: {stringValueState}
+                <table style={{ border: '1px solid black' }} cellSpacing={`1px`}>
+                    <tbody>
+                        <tr>
+                            <th style={{ border: '1px solid' }}>StringValueProp: </th>
+                            <th style={{ border: '1px solid' }}>{stringValueProp}</th>
+                        </tr>
+                        <tr>
+                            <th style={{ border: '1px solid' }}>StringValueState: </th>
+                            <th style={{ border: '1px solid' }}>{stringValueState}</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onClick={onClickNewValue}>New Value</button>
             </div>
         </div>
     );

@@ -45,7 +45,7 @@ const noRouterSlice = createSlice({
 
         setFilesBrowserState(state, action: PayloadAction<NoRouterState>) {
             console.log(`FilesBrowserSlice.setFilesBrowserState()`);
-            return { stringValue: action.payload.stringValue + ' - Updated at ' + new Date().toDateString() };
+            return { stringValue: action.payload.stringValue + ' - Saved at ' + new Date().getTime() };
         }
     }
 });
