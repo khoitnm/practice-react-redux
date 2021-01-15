@@ -9,9 +9,6 @@ const Navigation = () => {
         <Toolbar>
             <Grid container spacing={10} direction={'row'}>
                 <Grid item xs={3}>
-                    <NavLink to="/login">Login</NavLink>
-                </Grid>
-                <Grid item xs={3}>
                     <NavLink to={`/document/detail/` + uuid()}>Document Detail</NavLink>
                 </Grid>
                 <Grid item xs={3}>

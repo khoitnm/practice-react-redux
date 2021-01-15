@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import IDFile from '../../model/IDFile';
-import IFolder from '../../model/IFolder';
 
 /**
  * The state of browsing files (including IDocument and IFolder)
@@ -13,12 +11,14 @@ type FilesBrowserState = {
      * In the future, when we have pagination,
      * this list will not be all files inside the parentFile, not the list of all children files inside the parentFolder.
      */
-    loadedFiles: IDFile[];
-    parentFolder?: IFolder;
+    // loadedFiles: IDFile[];
+    // parentFolder?: IFolder;
+    stringValue: string;
 };
 
 const initialState: FilesBrowserState = {
-    loadedFiles: []
+    // loadedFiles: []
+    stringValue: 'Init String Value'
     // parentFolder: createRootFolder()
 };
 
@@ -45,7 +45,7 @@ const filesBrowserSlice = createSlice({
 
         setFilesBrowserState(state, action: PayloadAction<FilesBrowserState>) {
             console.log(`FilesBrowserSlice.setFilesBrowserState()`);
-            return action.payload;
+            return { stringValue: action.payload.stringValue + ' - Updated at ' + new Date().toDateString() };
         }
     }
 });

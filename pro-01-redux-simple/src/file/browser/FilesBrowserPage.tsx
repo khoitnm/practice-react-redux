@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { openFolder, openRootFolder } from './state/filesBrowserService';
+import { saveStringValue } from './state/filesBrowserService';
 import { RootState } from '../../config/redux/rootReducer';
-import { AppBar, Container, Grid, Toolbar, Typography } from '@material-ui/core';
-import FileBrowserItem from './FileBrowserItem';
 import { RouteComponentProps } from 'react-router-dom';
 
-const ROOT_FOLDER_ID = 'root';
 /**
  * The same as filesBrowserSlice.FilesBrowserState type
  */
@@ -26,11 +23,11 @@ type FilesBrowserPageProps = {
 const FilesBrowserPage = ({ match }: RouteComponentProps<FilesBrowserPageProps>) => {
     const parentFolderId = match.params.folderId;
     // Retrieve data from state
-    const { loadedFiles, parentFolder } = useSelector(({ filesBrowser }: RootState) => {
+    const { stringValue } = useSelector(({ filesBrowser }: RootState) => {
         console.log('useSelector');
         return filesBrowser;
     });
-    console.log(`parentFolderId (from router): ${parentFolderId}. parentFolder (from state): ${parentFolder?.id}`);
+    console.log(`parentFolderId (from router): ${parentFolderId}. stringValue from state ${stringValue}`);
 
     /**
      * Ref: https://redux-toolkit.js.org/tutorials/advanced-tutorial
@@ -80,30 +77,15 @@ const FilesBrowserPage = ({ match }: RouteComponentProps<FilesBrowserPageProps>)
      * }
      */
     useEffect(() => {
-        if (parentFolderId == ROOT_FOLDER_ID) {
-            console.log('useEffect openRootFolder');
-            dispatch(openRootFolder());
-        } else {
-            console.log(`useEffect openFolder(${parentFolderId})`);
-            dispatch(openFolder(parentFolderId));
-        }
+        console.log(`useEffect openFolder(${parentFolderId})`);
+        dispatch(saveStringValue(parentFolderId));
     }, [parentFolderId]);
 
     return (
-        <Container maxWidth="xl">
+        <div>
             {console.log('Render FilesBrowserPage')}
-            <AppBar position="sticky">
-                <Toolbar>
-                    <Typography variant="h6">{parentFolder && parentFolder.name ? parentFolder.name : 'Root'}</Typography>
-                </Toolbar>
-            </AppBar>
-
-            <Grid container spacing={1} direction={'column'}>
-                {loadedFiles.map(file => (
-                    <FileBrowserItem key={file.id} file={file} />
-                ))}
-            </Grid>
-        </Container>
+            <div>Parent Folder: {parentFolderId}</div>
+        </div>
     );
 };
 

@@ -1,10 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import filesBrowserSlice from '../../file/browser/state/filesBrowserSlice';
-import globalErrorSlice from '../../globalerror/globalErrorSlice';
 
 const rootReducer = combineReducers({
-    filesBrowser: filesBrowserSlice,
-    globalError: globalErrorSlice
+    filesBrowser: filesBrowserSlice
 });
 /**
  * The reason why do we need this RootState type:

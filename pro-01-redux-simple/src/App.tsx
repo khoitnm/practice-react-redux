@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
-import LoginPage from './login/LoginPage';
 import DocumentDetailPage from './file/detail/DocumentDetailPage';
 import FilesBrowserPage from './file/browser/FilesBrowserPage';
 import Navigation from './layout/Navigation';
@@ -14,7 +12,6 @@ class App extends Component {
                     <Navigation />
                     <Switch>
                         /* The code here must match Navigation component */
-                        <Route path={['/', '/login']} component={LoginPage} exact />
                         <Route path="/document/detail/:documentId" component={DocumentDetailPage} />
                         <Route path="/file/browser/:folderId" component={FilesBrowserPage} />
                     </Switch>
