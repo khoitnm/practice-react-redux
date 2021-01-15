@@ -86,13 +86,13 @@ const NoRouterPage = (props: NoRouterPageProps) => {
      */
     useEffect(() => {
         effectCount++;
-        console.log(`[${componentCount}] effectCount: ${effectCount}. saveStringValue(${stringValueProp})`);
+        console.log(`[${componentCount}] effectCount: ${effectCount}. saveStringValue("${stringValueProp}")`);
         dispatch(saveStringValue(stringValueProp));
     }, [stringValueProp]);
 
     const onClickNewValue = () => {
         console.log(`[${componentCount}] onClickNewValue`);
-        dispatch(saveStringValue('Random ' + new Date().getTime()));
+        dispatch(saveStringValue(`Random ${new Date().toLocaleTimeString()}`));
     };
 
     returnCount++;

@@ -3,7 +3,7 @@ import NoRouterPage from './noRouter/NoRouterPage';
 
 class App extends Component {
     render() {
-        return <NoRouterPage stringValue={new Date().toDateString()} />;
+        return <NoRouterPage stringValue={new Date().toLocaleTimeString()} />;
     }
 }
 

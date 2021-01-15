@@ -8,9 +8,9 @@ import { setFilesBrowserState } from './noRouterSlice';
 
 export const saveStringValue = (stringValue: string): AppThunk => async dispatch => {
     try {
-        console.log(`AppThunk: saveStringValue ${stringValue} start dispatch`);
+        console.log(`AppThunk: saveStringValue "${stringValue}" start dispatch`);
         dispatch(setFilesBrowserState({ stringValue: stringValue }));
-        console.log(`AppThunk: saveStringValue ${stringValue} end dispatch`);
+        console.log(`AppThunk: saveStringValue "${stringValue}" end dispatch`);
     } catch (err) {
         console.error(`AppThunk: saveStringValue error dispatch` + err, err);
     }
