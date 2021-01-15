@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",  /* Required by typescript-rest */
+    "module": "commonjs",
+    "outDir": "build/js",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,                      /* Skip type checking of declaration files. */
+    "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
+    "listEmittedFiles": true ,                  /* List the ts files were compiled when typing `tsc`*/
+    "experimentalDecorators": true, /* Required by typescript-rest */
+    "emitDecoratorMetadata": true,  /* Required by typescript-rest */
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/types/*.ts", "node_modules", ".vscode"]
+}

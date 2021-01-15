@@ -1,0 +1,58 @@
+{
+  "extends": [
+    /* "airbnb-typescript", */
+    /* "airbnb/hooks", */
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "jest"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "camelcase": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-expressions": ["error"],
+
+    // https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916
+    // note you must disable the base rule as it can report incorrect errors
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-unused-expressions": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-underscore-dangle": "off",
+    "no-restricted-syntax": "off",
+    "max-len": ["error", {"code": 150}],
+    "indent": ["error", 4]
+
+    /* Below rules are not found */
+    /* "import/no-extraneous-dependencies": ["error", { "devDependencies": true }], */
+    /* "react-hooks/exhaustive-deps": "warn", */
+    /* "react/jsx-props-no-spreading": "warn", */
+
+  }
+}
