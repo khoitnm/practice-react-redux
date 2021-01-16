@@ -3,12 +3,14 @@ import noRouterSlice from '../../noRouter/state/noRouterSlice';
 import comp01SimpleUseSelectSlice from '../../comp-01-simple-useSelect/state/Comp01SimpleUseSelectSlice';
 import comp02SimpleUseEffectSlice from '../../comp-02-simple-useEffect/state/Comp02SimpleUseEffectSlice';
 import comp03UseEffectUseSelectorSlice from '../../comp-03-useEffect-useSelector/state/Comp03UseEffectUseSelectorSlice';
+import comp04ClickButtonSlice from '../../comp-04-clickButton/state/Comp04ClickButtonSlice';
 
 const rootReducer = combineReducers({
     noRouterStateSlice: noRouterSlice,
     comp01SimpleUseSelectSlice,
     comp02SimpleUseEffectSlice,
-    comp03UseEffectUseSelectorSlice
+    comp03UseEffectUseSelectorSlice,
+    comp04ClickButtonSlice
 });
 /**
  * The reason why do we need this RootState type:
