@@ -5,7 +5,7 @@ let returnCount = 0;
 
 const Comp00SimplePage = () => {
     componentCount++;
-    console.log(`[${componentCount}] Start Component`);
+    console.log(`[${componentCount}] START COMPONENT`);
 
     returnCount++;
     return (

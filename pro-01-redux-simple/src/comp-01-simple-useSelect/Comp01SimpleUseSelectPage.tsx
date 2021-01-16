@@ -18,14 +18,14 @@ let returnCount = 0;
  */
 const Comp01SimpleUseSelectPage = () => {
     componentCount++;
-    console.log(`[${componentCount}] Start Component`);
+    console.log(`[${componentCount}] START COMPONENT`);
 
     const stringValueState = useSelector((rootState: RootState): string => {
         selectorCount++;
         console.log(`[${componentCount}] selector: ${selectorCount}`);
         return rootState.comp01SimpleUseSelectSlice.stringValue;
     });
-    console.log(`[${componentCount}] After Selector: stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] After useSelector: stringValueState: ${stringValueState}`);
 
     returnCount++;
     return (

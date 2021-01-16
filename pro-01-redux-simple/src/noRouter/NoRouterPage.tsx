@@ -27,7 +27,7 @@ let effectCount = 0;
  */
 const NoRouterPage = (props: NoRouterPageProps) => {
     componentCount++;
-    console.log(`[${componentCount}] Start Component`);
+    console.log(`[${componentCount}] START COMPONENT`);
 
     const stringValueProp = props.stringValue;
     // Retrieve data from state
@@ -38,7 +38,7 @@ const NoRouterPage = (props: NoRouterPageProps) => {
         console.log(`[${componentCount}] selector: ${selectorCount}`);
         return rootState.noRouterStateSlice.stringValue;
     }, shallowEqual);
-    console.log(`[${componentCount}] After Selector: stringValueProp: ${stringValueProp}. stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] After useSelector: stringValueProp: ${stringValueProp}. stringValueState: ${stringValueState}`);
 
     /**
      * Ref: https://redux-toolkit.js.org/tutorials/advanced-tutorial
