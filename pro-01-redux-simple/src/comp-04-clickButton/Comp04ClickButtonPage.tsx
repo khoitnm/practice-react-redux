@@ -27,8 +27,9 @@ const Comp04ClickButtonPage = () => {
     // useSelector
     const stringValueState = useSelector((rootState: RootState): string => {
         useSelectorCount++;
-        console.log(`[${componentCount}] selector: ${useSelectorCount}`);
-        return rootState.comp04ClickButtonSlice.stringValue;
+        const result = rootState.comp04ClickButtonSlice.stringValue;
+        console.log(`[${componentCount}] selector: ${useSelectorCount} => result: ${result}`);
+        return result;
     });
     console.log(`[${componentCount}] After useSelector: stringValueState: ${stringValueState}`);
 
