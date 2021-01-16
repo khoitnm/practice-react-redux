@@ -22,9 +22,8 @@ const Comp02SimpleUseEffectPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         effectCount++;
-        const stringValueState = new Date().toLocaleTimeString();
-        console.log(`[${componentCount}] effectCount: ${effectCount}. saveStringValue("${stringValueState}")`);
-        dispatch(thunkComp02SimpleUseEffect(stringValueState));
+        console.log(`[${componentCount}] effectCount: ${effectCount}.`);
+        dispatch(thunkComp02SimpleUseEffect(`${new Date().getTime()}`));
     }, [dispatch]);
     console.log(`[${componentCount}] After useEffect`);
 

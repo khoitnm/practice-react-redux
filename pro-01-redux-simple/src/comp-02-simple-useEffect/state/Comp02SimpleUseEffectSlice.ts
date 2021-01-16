@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 /**
  * The state of browsing files (including IDocument and IFolder)
  */
-type Comp01SimpleUseSelectState = {
+type Comp02SimpleUseEffectState = {
     stringValue: string;
 };
 
-const initialState: Comp01SimpleUseSelectState = {
+const initialState: Comp02SimpleUseEffectState = {
     stringValue: 'Init Comp01SimpleUseSelectState'
 };
 
@@ -20,9 +20,9 @@ const comp02SimpleUseEffectSlice = createSlice({
      *  - "(Remember that these "mutative" assignments are only safe and possible because createSlice uses Immer inside!)"
      */
     reducers: {
-        setComp02SimpleUseEffectState(state, action: PayloadAction<Comp01SimpleUseSelectState>) {
-            console.log(`Slice: setComp02SimpleUseEffectState`);
-            return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().toLocaleTimeString() };
+        setComp02SimpleUseEffectState(state, action: PayloadAction<Comp02SimpleUseEffectState>) {
+            console.log(`Slice: setComp02SimpleUseEffectState "${action.payload.stringValue}"`);
+            return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
         }
     }
 });
