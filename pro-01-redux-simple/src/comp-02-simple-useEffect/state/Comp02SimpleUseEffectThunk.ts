@@ -4,12 +4,12 @@
  */
 
 import { AppThunk } from '../../config/redux/store';
-import { setComp01SimpleUseSelectState } from './Comp01SimpleUseSelectSlice';
+import { setComp02SimpleUseEffectState } from './Comp02SimpleUseEffectSlice';
 
-export const saveStringValue = (stringValue: string): AppThunk => async dispatch => {
+export const thunkComp02SimpleUseEffect = (stringValue: string): AppThunk => async dispatch => {
     try {
         console.log(`AppThunk: saveStringValue "${stringValue}" start dispatch`);
-        dispatch(setComp01SimpleUseSelectState({ stringValue: stringValue }));
+        dispatch(setComp02SimpleUseEffectState({ stringValue: stringValue }));
         console.log(`AppThunk: saveStringValue "${stringValue}" end dispatch`);
     } catch (err) {
         console.error(`AppThunk: saveStringValue error dispatch` + err, err);

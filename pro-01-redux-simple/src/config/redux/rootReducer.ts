@@ -1,10 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import noRouterSlice from '../../noRouter/state/noRouterSlice';
 import comp01SimpleUseSelectSlice from '../../comp-01-simple-useSelect/state/Comp01SimpleUseSelectSlice';
+import comp02SimpleUseEffectSlice from '../../comp-02-simple-useEffect/state/Comp02SimpleUseEffectSlice';
 
 const rootReducer = combineReducers({
     noRouterStateSlice: noRouterSlice,
-    comp01SimpleUseSelectSlice
+    comp01SimpleUseSelectSlice,
+    comp02SimpleUseEffectSlice
 });
 /**
  * The reason why do we need this RootState type:

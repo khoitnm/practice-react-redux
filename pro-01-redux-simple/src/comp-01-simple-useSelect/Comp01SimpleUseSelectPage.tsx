@@ -6,7 +6,6 @@ import { RootState } from '../config/redux/rootReducer';
 let componentCount = 0;
 let selectorCount = 0;
 let returnCount = 0;
-const effectCount = 0;
 
 /**
  * Why our component is executed many times:
@@ -24,7 +23,7 @@ const Comp01SimpleUseSelectPage = () => {
     const stringValueState = useSelector((rootState: RootState): string => {
         selectorCount++;
         console.log(`[${componentCount}] selector: ${selectorCount}`);
-        return rootState.noRouterStateSlice.stringValue;
+        return rootState.comp01SimpleUseSelectSlice.stringValue;
     });
     console.log(`[${componentCount}] After Selector: stringValueState: ${stringValueState}`);
 
