@@ -12,7 +12,7 @@ const initialState: Comp04ClickButtonState = {
 };
 
 const comp04ClickButtonSlice = createSlice({
-    name: 'files',
+    name: 'comp04ClickButtonSlice',
     initialState,
     /**
      * Reducers in `createSlice` could mutate states:

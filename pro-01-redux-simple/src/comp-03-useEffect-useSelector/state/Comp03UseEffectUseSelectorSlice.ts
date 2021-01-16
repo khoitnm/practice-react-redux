@@ -12,7 +12,7 @@ const initialState: Comp03UseEffectUseSelectorState = {
 };
 
 const comp03UseEffectUseSelectorSlice = createSlice({
-    name: 'files',
+    name: 'comp03UseEffectUseSelectorSlice',
     initialState,
     /**
      * Reducers in `createSlice` could mutate states:

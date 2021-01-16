@@ -12,7 +12,7 @@ const initialState: Comp02SimpleUseEffectState = {
 };
 
 const comp02SimpleUseEffectSlice = createSlice({
-    name: 'files',
+    name: 'comp02SimpleUseEffectSlice',
     initialState,
     /**
      * Reducers in `createSlice` could mutate states:

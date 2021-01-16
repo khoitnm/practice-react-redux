@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 type Comp01SimpleUseSelectState = {
     stringValue: string;
@@ -9,7 +9,7 @@ const initialState: Comp01SimpleUseSelectState = {
 };
 
 const comp01SimpleUseSelectSlice = createSlice({
-    name: 'files',
+    name: 'comp01SimpleUseSelectSlice',
     initialState,
     /**
      * Reducers in `createSlice` could mutate states:

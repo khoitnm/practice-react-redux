@@ -12,7 +12,6 @@ class App extends Component {
         // return <Comp02SimpleUseEffectPage />;
         // return <Comp03UseEffectUseSelectorPage />;
         return <Comp04ClickButtonPage />;
-        // return <NoRouterPage stringValue={new Date().toLocaleTimeString()} />;
     }
 }
 
