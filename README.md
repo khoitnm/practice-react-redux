@@ -76,6 +76,10 @@ After starting the application, you can trigger the API by using links provided 
 - Boostrap vs. Material-UI: https://flatlogic.com/blog/bootstrap-vs-material-ui-which-one-to-use-for-the-next-web-app
 - @material-ui: https://material-ui.com/getting-started/usage/
 
+## Component Lifecycle & Hooks
+- Functional Component vs. Class Component: https://www.twilio.com/blog/react-choose-functional-components
+- useSelector lifecycle: https://react-redux.js.org/api/hooks
+
 ### Routing
 - Multiple pages ReactJS (Starter Guideline): https://www.golangprograms.com/how-to-create-simple-react-router-to-navigate-multiple-pages.html
 - React Router - A Complete Guide: https://www.sitepoint.com/react-router-complete-guide/

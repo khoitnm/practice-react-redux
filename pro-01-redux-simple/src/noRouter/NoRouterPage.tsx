@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from '../config/redux/rootReducer';
 import { saveStringValue } from './state/noRouterService';
@@ -15,6 +15,7 @@ let componentCount = 0;
 let selectorCount = 0;
 let returnCount = 0;
 let effectCount = 0;
+
 /**
  * Why our component is executed many times:
  * https://stackoverflow.com/questions/58697073/multiple-times-render-in-react-functional-component-with-hooks
@@ -30,11 +31,13 @@ const NoRouterPage = (props: NoRouterPageProps) => {
 
     const stringValueProp = props.stringValue;
     // Retrieve data from state
-    const stringValueState = useSelector((rootState: RootState) => {
+    // Explanation why do we need shallowEqual: https://thoughtbot.com/blog/using-redux-with-react-hooks
+    // See why default setting is not shallowEqual: https://react-redux.js.org/api/hooks
+    const stringValueState = useSelector((rootState: RootState): string => {
         selectorCount++;
         console.log(`[${componentCount}] selector: ${selectorCount}`);
         return rootState.noRouterStateSlice.stringValue;
-    });
+    }, shallowEqual);
     console.log(`[${componentCount}] After Selector: stringValueProp: ${stringValueProp}. stringValueState: ${stringValueState}`);
 
     /**
@@ -88,7 +91,7 @@ const NoRouterPage = (props: NoRouterPageProps) => {
         effectCount++;
         console.log(`[${componentCount}] effectCount: ${effectCount}. saveStringValue("${stringValueProp}")`);
         dispatch(saveStringValue(stringValueProp));
-    }, [stringValueProp]);
+    }, [stringValueProp, dispatch]);
 
     const onClickNewValue = () => {
         console.log(`[${componentCount}] onClickNewValue`);
