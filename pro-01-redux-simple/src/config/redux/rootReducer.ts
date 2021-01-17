@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
     comp01SimpleUseSelectSlice,
     comp02SimpleUseEffectSlice,
     comp03UseEffectUseSelectorSlice,
-    comp04ClickButtonSlice
+    comp04ClickButtonSlice,
 });
 /**
  * The reason why do we need this RootState type:

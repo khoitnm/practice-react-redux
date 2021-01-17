@@ -8,7 +8,7 @@ type Comp04ClickButtonState = {
 };
 
 const initialState: Comp04ClickButtonState = {
-    stringValue: 'Init Comp01SimpleUseSelectState'
+    stringValue: 'Init Comp01SimpleUseSelectState',
 };
 
 const comp04ClickButtonSlice = createSlice({
@@ -23,8 +23,8 @@ const comp04ClickButtonSlice = createSlice({
         setComp04ClickButtonState(state, action: PayloadAction<Comp04ClickButtonState>) {
             console.log(`Slice: setComp04ClickButtonState "${action.payload.stringValue}"`);
             return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
-        }
-    }
+        },
+    },
 });
 
 export const { setComp04ClickButtonState } = comp04ClickButtonSlice.actions;

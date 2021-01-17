@@ -8,7 +8,7 @@ type Comp03UseEffectUseSelectorState = {
 };
 
 const initialState: Comp03UseEffectUseSelectorState = {
-    stringValue: 'Init Comp01SimpleUseSelectState'
+    stringValue: 'Init Comp01SimpleUseSelectState',
 };
 
 const comp03UseEffectUseSelectorSlice = createSlice({
@@ -23,8 +23,8 @@ const comp03UseEffectUseSelectorSlice = createSlice({
         setComp03UseEffectUseSelectorState(state, action: PayloadAction<Comp03UseEffectUseSelectorState>) {
             console.log(`Slice: setComp03UseEffectUseSelectorState "${action.payload.stringValue}"`);
             return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
-        }
-    }
+        },
+    },
 });
 
 export const { setComp03UseEffectUseSelectorState } = comp03UseEffectUseSelectorSlice.actions;

@@ -6,7 +6,7 @@
 import { AppThunk } from '../../config/redux/store';
 import { setComp02SimpleUseEffectState } from './Comp02SimpleUseEffectSlice';
 
-export const thunkComp02SimpleUseEffect = (stringValue: string): AppThunk => async dispatch => {
+export const thunkComp02SimpleUseEffect = (stringValue: string): AppThunk => async (dispatch) => {
     try {
         console.log(`AppThunk: saveStringValue "${stringValue}" start dispatch`);
         dispatch(setComp02SimpleUseEffectState({ stringValue: stringValue }));

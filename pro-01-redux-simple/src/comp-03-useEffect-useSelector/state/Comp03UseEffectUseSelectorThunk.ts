@@ -6,7 +6,7 @@
 import { AppThunk } from '../../config/redux/store';
 import { setComp03UseEffectUseSelectorState } from './Comp03UseEffectUseSelectorSlice';
 
-export const thunkComp03UseEffectUseSelector = (stringValue: string): AppThunk => async dispatch => {
+export const thunkComp03UseEffectUseSelector = (stringValue: string): AppThunk => async (dispatch) => {
     try {
         console.log(`AppThunk: saveStringValue "${stringValue}" start dispatch`);
         dispatch(setComp03UseEffectUseSelectorState({ stringValue: stringValue }));

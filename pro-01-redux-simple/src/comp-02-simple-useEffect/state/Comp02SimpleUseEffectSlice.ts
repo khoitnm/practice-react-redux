@@ -8,7 +8,7 @@ type Comp02SimpleUseEffectState = {
 };
 
 const initialState: Comp02SimpleUseEffectState = {
-    stringValue: 'Init Comp01SimpleUseSelectState'
+    stringValue: 'Init Comp01SimpleUseSelectState',
 };
 
 const comp02SimpleUseEffectSlice = createSlice({
@@ -23,8 +23,8 @@ const comp02SimpleUseEffectSlice = createSlice({
         setComp02SimpleUseEffectState(state, action: PayloadAction<Comp02SimpleUseEffectState>) {
             console.log(`Slice: setComp02SimpleUseEffectState "${action.payload.stringValue}"`);
             return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
-        }
-    }
+        },
+    },
 });
 
 export const { setComp02SimpleUseEffectState } = comp02SimpleUseEffectSlice.actions;
