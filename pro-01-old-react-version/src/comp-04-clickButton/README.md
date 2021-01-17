@@ -1,0 +1,1 @@
+The code follow a simple example in this guideline: https://react-redux.js.org/api/hooks
