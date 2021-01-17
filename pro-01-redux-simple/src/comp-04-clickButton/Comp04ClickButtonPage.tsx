@@ -24,11 +24,11 @@ const Comp04ClickButtonPage = (): JSX.Element => {
     // useSelector
     const stringValueState = useSelector((rootState: RootState): string => {
         useSelectorCount++;
+        console.log(`[${componentCount}] selectorCount: ${useSelectorCount}`);
         const result = rootState.comp04ClickButtonSlice.stringValue;
-        console.log(`[${componentCount}] selectorCount: ${useSelectorCount} => result: ${result}`);
         return result;
     });
-    console.log(`[${componentCount}] component - after useSelectorCount: stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] component - after useSelectorCount`);
 
     // useEffect
     const dispatch = useDispatch();
