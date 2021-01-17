@@ -19,16 +19,16 @@ let useEffectCount = 0;
  */
 const Comp04ClickButtonPage = (): JSX.Element => {
     componentCount++;
-    console.log(`[${componentCount}] START COMPONENT ----------------------`);
+    console.log(`[${componentCount}] component - START ----------------------`);
 
     // useSelector
     const stringValueState = useSelector((rootState: RootState): string => {
         useSelectorCount++;
         const result = rootState.comp04ClickButtonSlice.stringValue;
-        console.log(`[${componentCount}] selector: ${useSelectorCount} => result: ${result}`);
+        console.log(`[${componentCount}] selectorCount: ${useSelectorCount} => result: ${result}`);
         return result;
     });
-    console.log(`[${componentCount}] After useSelector: stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] component - after useselectorCount: stringValueState: ${stringValueState}`);
 
     // useEffect
     const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const Comp04ClickButtonPage = (): JSX.Element => {
         console.log(`[${componentCount}] effectCount: ${useEffectCount}.`);
         dispatch(thunkComp04ClickButton(`${new Date().getTime()}`));
     }, [dispatch]);
-    console.log(`[${componentCount}] After useEffect`);
+    console.log(`[${componentCount}] component - after useEffect`);
 
     const onClickButton = () => {
         componentCount = returnCount = useSelectorCount = useEffectCount = 0; // reset counts
@@ -49,9 +49,9 @@ const Comp04ClickButtonPage = (): JSX.Element => {
     returnCount++;
     return (
         <div>
-            {console.log(`[${componentCount}] Render: ${returnCount}`)}
+            {console.log(`[${componentCount}] renderCount: ${returnCount}`)}
             <div>
-                [{componentCount}], useEffect: {useEffectCount}, useSelector: {useSelectorCount}, returnCount: {returnCount}
+                [{componentCount}], useEffect: {useEffectCount}, useselectorCount: {useSelectorCount}, returnCount: {returnCount}
             </div>
             <button onClick={onClickButton}>Click Button</button>
         </div>

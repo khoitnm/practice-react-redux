@@ -19,15 +19,15 @@ let effectCount = 0;
  */
 const Comp03UseEffectUseSelectorPage = (): JSX.Element => {
     componentCount++;
-    console.log(`[${componentCount}] START COMPONENT ----------------------`);
+    console.log(`[${componentCount}] component - START ----------------------`);
 
     // useSelector
     const stringValueState = useSelector((rootState: RootState): string => {
         selectorCount++;
-        console.log(`[${componentCount}] selector: ${selectorCount}`);
+        console.log(`[${componentCount}] selectorCount: ${selectorCount}`);
         return rootState.comp03UseEffectUseSelectorSlice.stringValue;
     });
-    console.log(`[${componentCount}] After useSelector: stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] component - after useselectorCount: stringValueState: ${stringValueState}`);
 
     // useEffect
     const dispatch = useDispatch();
@@ -36,15 +36,15 @@ const Comp03UseEffectUseSelectorPage = (): JSX.Element => {
         console.log(`[${componentCount}] effectCount: ${effectCount}.`);
         dispatch(thunkComp03UseEffectUseSelector(`${new Date().getTime()}`));
     }, [dispatch]);
-    console.log(`[${componentCount}] After useEffect`);
+    console.log(`[${componentCount}] component - after useEffect`);
 
     // render
     returnCount++;
     return (
         <div>
-            {console.log(`[${componentCount}] Render: ${returnCount}`)}
+            {console.log(`[${componentCount}] renderCount: ${returnCount}`)}
             <span>
-                [{componentCount}] Render: {returnCount}
+                [{componentCount}] renderCount: {returnCount}
             </span>
         </div>
     );

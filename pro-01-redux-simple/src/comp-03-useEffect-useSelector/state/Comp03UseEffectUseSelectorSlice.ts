@@ -8,7 +8,7 @@ type Comp03UseEffectUseSelectorState = {
 };
 
 const initialState: Comp03UseEffectUseSelectorState = {
-    stringValue: 'Init Comp01SimpleUseSelectState',
+    stringValue: 'Init Comp03UseEffectUseSelectorState',
 };
 
 const comp03UseEffectUseSelectorSlice = createSlice({

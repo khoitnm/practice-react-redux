@@ -8,7 +8,7 @@ type Comp04ClickButtonState = {
 };
 
 const initialState: Comp04ClickButtonState = {
-    stringValue: 'Init Comp01SimpleUseSelectState',
+    stringValue: 'Init Comp04ClickButtonState',
 };
 
 const comp04ClickButtonSlice = createSlice({

@@ -5,14 +5,14 @@ let returnCount = 0;
 
 const Comp00SimplePage = (): JSX.Element => {
     componentCount++;
-    console.log(`[${componentCount}] START COMPONENT`);
+    console.log(`[${componentCount}] component - START`);
 
     returnCount++;
     return (
         <div>
-            {console.log(`[${componentCount}] Return Render: ${returnCount}`)}
+            {console.log(`[${componentCount}] Return renderCount: ${returnCount}`)}
             <span>
-                [{componentCount}] Render: {returnCount}
+                [{componentCount}] renderCount: {returnCount}
             </span>
         </div>
     );

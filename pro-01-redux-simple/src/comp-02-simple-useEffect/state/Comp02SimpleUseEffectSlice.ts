@@ -8,7 +8,7 @@ type Comp02SimpleUseEffectState = {
 };
 
 const initialState: Comp02SimpleUseEffectState = {
-    stringValue: 'Init Comp01SimpleUseSelectState',
+    stringValue: 'Init Comp02SimpleUseEffectState',
 };
 
 const comp02SimpleUseEffectSlice = createSlice({

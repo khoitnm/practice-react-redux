@@ -17,7 +17,7 @@ let effectCount = 0;
  */
 const Comp02SimpleUseEffectPage = (): JSX.Element => {
     componentCount++;
-    console.log(`[${componentCount}] START COMPONENT`);
+    console.log(`[${componentCount}] component - START`);
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -25,14 +25,14 @@ const Comp02SimpleUseEffectPage = (): JSX.Element => {
         console.log(`[${componentCount}] effectCount: ${effectCount}.`);
         dispatch(thunkComp02SimpleUseEffect(`${new Date().getTime()}`));
     }, [dispatch]);
-    console.log(`[${componentCount}] After useEffect`);
+    console.log(`[${componentCount}] component - after useEffect`);
 
     returnCount++;
     return (
         <div>
-            {console.log(`[${componentCount}] Render: ${returnCount}`)}
+            {console.log(`[${componentCount}] renderCount: ${returnCount}`)}
             <span>
-                [{componentCount}] Render: {returnCount}
+                [{componentCount}] renderCount: {returnCount}
             </span>
         </div>
     );
