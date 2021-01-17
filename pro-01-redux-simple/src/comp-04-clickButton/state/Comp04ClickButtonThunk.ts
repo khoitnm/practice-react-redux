@@ -6,6 +6,10 @@
 import { AppThunk } from '../../config/redux/store';
 import { setComp04ClickButtonState } from './Comp04ClickButtonSlice';
 
+/**
+ * Thunk for Comp04ClickButton logic.
+ * @param stringValue
+ */
 export const thunkComp04ClickButton = (stringValue: string): AppThunk => async (dispatch) => {
     try {
         console.log(`AppThunk: saveStringValue "${stringValue}" start dispatch`);

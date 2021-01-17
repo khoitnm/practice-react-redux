@@ -28,7 +28,7 @@ const Comp04ClickButtonPage = (): JSX.Element => {
         console.log(`[${componentCount}] selectorCount: ${useSelectorCount} => result: ${result}`);
         return result;
     });
-    console.log(`[${componentCount}] component - after useselectorCount: stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] component - after useSelectorCount: stringValueState: ${stringValueState}`);
 
     // useEffect
     const dispatch = useDispatch();
@@ -51,7 +51,7 @@ const Comp04ClickButtonPage = (): JSX.Element => {
         <div>
             {console.log(`[${componentCount}] renderCount: ${returnCount}`)}
             <div>
-                [{componentCount}], useEffect: {useEffectCount}, useselectorCount: {useSelectorCount}, returnCount: {returnCount}
+                [{componentCount}], useEffect: {useEffectCount}, useSelectorCount: {useSelectorCount}, returnCount: {returnCount}
             </div>
             <button onClick={onClickButton}>Click Button</button>
         </div>

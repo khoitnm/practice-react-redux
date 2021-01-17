@@ -25,7 +25,7 @@ const Comp01SimpleUseSelectPage = (): JSX.Element => {
         console.log(`[${componentCount}] selectorCount: ${selectorCount}`);
         return rootState.comp01SimpleUseSelectSlice.stringValue;
     });
-    console.log(`[${componentCount}] component - after useselectorCount: stringValueState: ${stringValueState}`);
+    console.log(`[${componentCount}] component - after useSelectorCount: stringValueState: ${stringValueState}`);
 
     returnCount++;
     return (
