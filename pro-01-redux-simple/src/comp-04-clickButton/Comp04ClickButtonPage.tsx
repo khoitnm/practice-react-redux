@@ -3,10 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { thunkComp04ClickButton } from './state/Comp04ClickButtonThunk';
 import { RootState } from '../config/redux/rootReducer';
 
-// componentCount is the main count
 let componentCount = 0;
-
-// below are sub-counts
 let returnCount = 0;
 let useSelectorCount = 0;
 let useEffectCount = 0;
