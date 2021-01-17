@@ -4,12 +4,23 @@
     /* "airbnb/hooks", */
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "prettier",                    // npm module "eslint-config-prettier" (not "eslint-plugin-prettier"): it's responsible for deactivating some ESLint rule sets which can conflict with Prettier. Ref https://indepth.dev/posts/1282/setting-up-efficient-workflows-with-eslint-prettier-and-typescript
+    "plugin:prettier/recommended", // Combined with plugin "prettier": Wiew more at https://github.com/prettier/eslint-plugin-prettier,
+    "prettier/flowtype",           // Combined with plugin "prettier": Some ESLint plugins (such as eslint-plugin-react) also contain rules that conflict with Prettier. This is used to avoid that conflict. View more at https://github.com/prettier/eslint-plugin-prettier,
+    "prettier/react",              // Combined with plugin "prettier": Some ESLint plugins (such as eslint-plugin-react) also contain rules that conflict with Prettier. This is used to avoid that conflict. View more at https://github.com/prettier/eslint-plugin-prettier,
+    "prettier/@typescript-eslint"  // Disable conflict rules in "@typescript-eslint". Ref: https://indepth.dev/posts/1282/setting-up-efficient-workflows-with-eslint-prettier-and-typescript
   ],
-  "plugins": ["@typescript-eslint", "jest"],
+
+  /**
+   * https://indepth.dev/posts/1282/setting-up-efficient-workflows-with-eslint-prettier-and-typescript
+   * Plugins contain rules that have been written by using a parser.
+   * As long as the plugin name does not start with eslint-plugin- or @ or ./ then you have to just prefix the plugin name with eslint-plugin-.
+   */
+  "plugins": [
+    "@typescript-eslint", // npm module "@typescript-eslint/eslint-plugin"
+    "jest",               // npm module "eslint-plugin-jest"
+    "prettier"            // npm module "eslint-plugin-prettier", view more at https://github.com/prettier/eslint-plugin-prettier
+  ],
   "env": {
     "browser": true,
     "es6": true,
@@ -30,6 +41,7 @@
     }
   },
   "rules": {
+    /* "prettier/prettier": "error", // Combined with plugin "prettier" // Don't need this because it's include inside extends "plugin:prettier/recommended" */
     "camelcase": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
