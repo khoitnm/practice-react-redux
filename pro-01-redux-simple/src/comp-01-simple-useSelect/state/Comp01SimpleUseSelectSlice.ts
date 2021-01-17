@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, SliceCaseReducers, ValidateSliceCaseReducers } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type Comp01SimpleUseSelectState = {
     stringValue: string;
