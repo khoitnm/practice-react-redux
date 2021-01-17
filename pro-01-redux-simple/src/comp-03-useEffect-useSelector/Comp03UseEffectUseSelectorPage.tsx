@@ -17,7 +17,7 @@ let effectCount = 0;
  * @param match
  * @constructor
  */
-const Comp03UseEffectUseSelectorPage = () => {
+const Comp03UseEffectUseSelectorPage = (): JSX.Element => {
     componentCount++;
     console.log(`[${componentCount}] START COMPONENT ----------------------`);
 

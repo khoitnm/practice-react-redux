@@ -20,7 +20,7 @@ let useEffectCount = 0;
  * @param match
  * @constructor
  */
-const Comp04ClickButtonPage = () => {
+const Comp04ClickButtonPage = (): JSX.Element => {
     componentCount++;
     console.log(`[${componentCount}] START COMPONENT ----------------------`);
 

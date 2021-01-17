@@ -16,7 +16,7 @@ let returnCount = 0;
  * @param match
  * @constructor
  */
-const Comp01SimpleUseSelectPage = () => {
+const Comp01SimpleUseSelectPage = (): JSX.Element => {
     componentCount++;
     console.log(`[${componentCount}] START COMPONENT`);
 

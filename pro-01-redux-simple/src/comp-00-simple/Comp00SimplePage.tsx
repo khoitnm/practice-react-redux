@@ -3,7 +3,7 @@ import React from 'react';
 let componentCount = 0;
 let returnCount = 0;
 
-const Comp00SimplePage = () => {
+const Comp00SimplePage = (): JSX.Element => {
     componentCount++;
     console.log(`[${componentCount}] START COMPONENT`);
 

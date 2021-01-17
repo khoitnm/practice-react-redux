@@ -32,7 +32,7 @@
   "rules": {
     "camelcase": "off",
     "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
     "@typescript-eslint/no-unused-expressions": ["error"],
 
     // https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916
