@@ -58,8 +58,8 @@
     "no-param-reassign": ["error", { "props": false }],
     "no-underscore-dangle": "off",
     "no-restricted-syntax": "off",
-    "max-len": ["error", {"code": 150}],
-    "indent": ["error", 4]
+    "max-len": ["off", {"code": 150}],
+    "indent": ["off", 4] /* When using prettier, you'd better disable eslint's indent rule: https://stackoverflow.com/questions/56337176/prettier-and-eslint-indents-not-working-together */
 
     /* Below rules are not found */
     /* "import/no-extraneous-dependencies": ["error", { "devDependencies": true }], */
