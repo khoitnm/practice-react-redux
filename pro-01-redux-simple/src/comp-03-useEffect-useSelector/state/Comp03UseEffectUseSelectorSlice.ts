@@ -22,7 +22,7 @@ const comp03UseEffectUseSelectorSlice = createSlice({
     reducers: {
         setComp03UseEffectUseSelectorState(state, action: PayloadAction<Comp03UseEffectUseSelectorState>) {
             console.log(`Slice: setComp03UseEffectUseSelectorState "${action.payload.stringValue}"`);
-            return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
+            return action.payload;
         },
     },
 });

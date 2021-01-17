@@ -22,7 +22,7 @@ const comp02SimpleUseEffectSlice = createSlice({
     reducers: {
         setComp02SimpleUseEffectState(state, action: PayloadAction<Comp02SimpleUseEffectState>) {
             console.log(`Slice: setComp02SimpleUseEffectState "${action.payload.stringValue}"`);
-            return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
+            return action.payload;
         },
     },
 });

@@ -22,7 +22,7 @@ const comp04ClickButtonSlice = createSlice({
     reducers: {
         setComp04ClickButtonState(state, action: PayloadAction<Comp04ClickButtonState>) {
             console.log(`Slice: setComp04ClickButtonState "${action.payload.stringValue}"`);
-            return { stringValue: action.payload.stringValue + ' - changed at ' + new Date().getTime() };
+            return action.payload;
         },
     },
 });
