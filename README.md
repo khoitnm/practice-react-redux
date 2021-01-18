@@ -30,7 +30,10 @@ Run following to install all required dependencies:
 ```
 npm install
 ```
-
+After that, it may show warning with a suggestion to run `npm audit fix`, and use the `--force` option if necessary like this:
+```
+npm audit fix --force
+```
 ## Start application
 Then run following to start development server:
 ```
