@@ -6,7 +6,7 @@ import store from './config/redux/store';
 const render = () => {
     // Sourcecode: https://redux-toolkit.js.org/tutorials/advanced-tutorial (click "Open Sandbox" section)
     // Explanation: https://stackoverflow.com/questions/43247696/javascript-require-vs-require-default
-    // "The HMR interface code cannot use import as it doesn't work inline."
+    // "The HMR interface code cannot use import as it doesn't work inline.". Note: The comment of MHR suggest it's not needed anymore: https://stackoverflow.com/questions/65779454/reactjs-swallow-some-log-messages
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const App = require('./App').default;
 
