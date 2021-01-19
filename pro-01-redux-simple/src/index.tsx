@@ -2,20 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './config/redux/store';
+import App from './App';
 
 const render = () => {
-    // Sourcecode: https://redux-toolkit.js.org/tutorials/advanced-tutorial (click "Open Sandbox" section)
-    // Explanation: https://stackoverflow.com/questions/43247696/javascript-require-vs-require-default
-    // "The HMR interface code cannot use import as it doesn't work inline."
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const App = require('./App').default;
-
     ReactDOM.render(
-        <React.StrictMode>
+        /*
+        <React.StrictMode> double-invokes various things like function component bodies and certain hooks.
+        https://stackoverflow.com/questions/65777967/react-functional-component-execute-multiple-times-with-useselector-is-execute
+        https://stackoverflow.com/questions/65779454/reactjs-swallow-some-log-messages
+        */
+        <React.Fragment>
             <Provider store={store}>
                 <App />
             </Provider>
-        </React.StrictMode>,
+        </React.Fragment>,
         document.getElementById('root')
     );
 };

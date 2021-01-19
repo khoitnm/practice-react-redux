@@ -11,11 +11,16 @@ const render = () => {
     const App = require('./App').default;
 
     ReactDOM.render(
-        <React.StrictMode>
+        /*
+        <React.StrictMode> double-invokes various things like function component bodies and certain hooks.
+        https://stackoverflow.com/questions/65777967/react-functional-component-execute-multiple-times-with-useselector-is-execute
+        https://stackoverflow.com/questions/65779454/reactjs-swallow-some-log-messages
+        */
+        <React.Fragment>
             <Provider store={store}>
                 <App />
             </Provider>
-        </React.StrictMode>,
+        </React.Fragment>,
         document.getElementById('root')
     );
 };
