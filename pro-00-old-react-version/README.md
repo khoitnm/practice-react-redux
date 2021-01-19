@@ -5,3 +5,7 @@ But actually, the application only load one of them (I don't use `Router` just t
 and that loaded component is configured in `./src/App.tsx`.
 
 When running the application `localhost:3000`, open Browser's console to see when the component is started, useEffect, useSelect, etc.
+
+# References 
+- https://reactjs.org/docs/hooks-effect.html
+- https://github.com/reduxjs/reselect
